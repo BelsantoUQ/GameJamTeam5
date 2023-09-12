@@ -12,13 +12,18 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private float rotation;
     private bool isGrounded; // Variable para verificar si el jugador está en el suelo
-
+    private RotatePlanet planetController;
+    private bool activateTunnelEffect;
+    private bool lateTunnelEffect;
+    
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        planetController = FindObjectOfType<RotatePlanet>();
         jumpForce = 10f;
         moveSpeed = 5f;
+        lateTunnelEffect = false;
     }
 
     // Update is called once per frame
@@ -40,6 +45,8 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        TunnelEffectPower();
+        
         float horizontalInput = Input.GetAxis("Horizontal");
         float currentPosition = transform.position.x;
 
@@ -85,6 +92,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void TunnelEffectPower()
+    {
+        
+        if (this.activateTunnelEffect)
+        {
+            if (Input.GetKeyDown(KeyCode.R) && !lateTunnelEffect)
+            {
+                planetController.SetSpeed(-50f);
+            }
+        }
+        else
+        {
+            // Ajustar la velocidad a 15
+            planetController.SetSpeed(-15f);
+        }
+    }
 
 
     // Detectar si el jugador está en el suelo
@@ -99,5 +122,17 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true; // El jugador está en el suelo
         }
+    }
+
+    public void SetTunnelEffect(bool activate)
+    {
+        this.activateTunnelEffect = activate;
+        
+    }
+    
+    public void SetLateTunnelEffect(bool activate)
+    {
+        this.lateTunnelEffect = activate;
+        
     }
 }
