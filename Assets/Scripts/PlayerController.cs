@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpForce; // Fuerza de salto
     private Rigidbody rb;
-
+    private float rotation;
     private bool isGrounded; // Variable para verificar si el jugador está en el suelo
 
     // Start is called before the first frame update
@@ -54,9 +54,37 @@ public class PlayerController : MonoBehaviour
         newPosition = Mathf.Clamp(newPosition, minX, maxX);
 
         // Aplica la nueva posición
-        transform.position = new Vector3(newPosition, transform.position.y, transform.position.z);
-        
+        transform.position = new Vector3(newPosition, transform.position.y, -12f);
+
+        // Limita la rotación vertical de la cámara dentro de los límites
+        float newRotationX = transform.rotation.eulerAngles.x;
+        newRotationX = Mathf.Clamp(newRotationX, -102.457f, -101f);
+
+        // Define la velocidad de cambio de rotación
+        float rotationSpeed = 2.0f;
+
+        // Calcula la nueva rotación
+        float targetRotation = 0.0f;
+
+        if (horizontalInput > 0)
+        {
+            targetRotation = 25.0f;
+        }
+        else if (horizontalInput < 0)
+        {
+            targetRotation = -25.0f;
+        }
+
+        // Aplica una interpolación lineal para suavizar la rotación
+        rotation = Mathf.Lerp(rotation, targetRotation, Time.deltaTime * rotationSpeed);
+
+        if (rotation > -25 && rotation < 25)
+        {
+            // Aplica la rotación horizontal restringida
+            transform.rotation = Quaternion.Euler(newRotationX, 0, rotation);
+        }
     }
+
 
 
     // Detectar si el jugador está en el suelo
