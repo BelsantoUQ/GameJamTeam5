@@ -9,6 +9,8 @@ TagManager:
   - LevelArea
   - SpaceDeath
   - Ground
+  - ChasisPlayer
+  - Chasis
   layers:
   - Default
   - TransparentFX
