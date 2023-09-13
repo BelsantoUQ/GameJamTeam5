@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     private RotatePlanet planetController;
     private bool activateTunnelEffect;
     private bool lateTunnelEffect;
+    private int hitsRemaining;
+    private CarComponents carComponents;
+    private bool noHit;
     
     // Start is called before the first frame update
     void Start()
@@ -23,7 +26,9 @@ public class PlayerController : MonoBehaviour
         planetController = FindObjectOfType<RotatePlanet>();
         jumpForce = 10f;
         moveSpeed = 5f;
+        hitsRemaining = 2;
         lateTunnelEffect = false;
+        noHit = false;
     }
 
     // Update is called once per frame
@@ -100,6 +105,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R) && !lateTunnelEffect)
             {
                 planetController.SetSpeed(-50f);
+                noHit = true;
             }
         }
         else
@@ -130,9 +136,43 @@ public class PlayerController : MonoBehaviour
         
     }
     
+    public void SetNoHit(bool activate)
+    {
+        this.activateTunnelEffect = activate;
+        
+    }
+    
     public void SetLateTunnelEffect(bool activate)
     {
         this.lateTunnelEffect = activate;
-        
+    }
+
+    public void SetHit()
+    {
+        if (!noHit)
+        {
+            this.hitsRemaining -= 1;
+        }
+
+        // Verifica si hitsRemaining es mayor o igual a 1
+        if (hitsRemaining > 0)
+        {
+            // Aplica el efecto de golpe en el objeto
+            // baja y sube sutilmente la opacidad del material del objeto para dar efecto de golpe
+            // Cambia el tono del albedo material del objeto a rojo de la misma manera que la opacidad
+
+            // Sacude un poquito la cámara principal de la escena que está fuera de este gameObject
+            
+        }
+        else
+        {
+            // Si hitsRemaining es 0, desarma el carro
+            CarComponents[] carComponentsArray = FindObjectsOfType<CarComponents>();
+
+            foreach (CarComponents carComponent in carComponentsArray)
+            {
+                carComponent.SetRigidbody();
+            }
+        }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LateTunnelEffect : MonoBehaviour
 {
     private PlayerController playerController;
-
+    
     // Este método se llama cuando un objeto entra en el colisionador
     void OnTriggerEnter(Collider other)
     {
@@ -13,6 +13,8 @@ public class LateTunnelEffect : MonoBehaviour
         {
             playerController = FindObjectOfType<PlayerController>();
             playerController.SetLateTunnelEffect(true);
+            playerController.SetHit();
+
         }
     }
 

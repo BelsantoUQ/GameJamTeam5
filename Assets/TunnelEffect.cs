@@ -22,6 +22,7 @@ public class TunnelEffect : MonoBehaviour
         if (!other.gameObject.CompareTag("Player"))
         {
             playerController.SetTunnelEffect(false);
+            playerController.SetNoHit(false);
         }
     }
 }
