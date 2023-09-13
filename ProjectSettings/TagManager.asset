@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Effector
+  - Attractor
+  - LevelArea
+  - SpaceDeath
+  - Ground
+  - ChasisPlayer
+  - Chasis
   layers:
   - Default
   - TransparentFX
