@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Score : MonoBehaviour
+public class GameOverScore : MonoBehaviour
 {
     //Variable para poder saber la colision con los puntos
     [SerializeField] HudVariables points;
@@ -12,20 +11,7 @@ public class Score : MonoBehaviour
 
     private void Awake()
     {
-        points.score = 0;
-    }
-
-    private void FixedUpdate()
-    {
-        points.score += Time.deltaTime * 10;
         scoreText.text = points.score.ToString("0");
     }
-
-
-    public void addPoints()
-    {
-        points.score += 100;
-    }
-
 
 }
