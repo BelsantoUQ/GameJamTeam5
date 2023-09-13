@@ -14,7 +14,7 @@ public class SimpleSpawn : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("RandomSpawn", 1, 1.3f);
+        InvokeRepeating("RandomSpawn", 1, 1.3f * Time.deltaTime);
     }
 
     void RandomSpawn()
