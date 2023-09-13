@@ -18,10 +18,5 @@ public class RotatePlanet : MonoBehaviour
     {
         this.rotationSpeed = newSpeed;
     }
-    
-    public float GetSpeed(float newSpeed)
-    {
-        return this.rotationSpeed;
-    }
 
 }

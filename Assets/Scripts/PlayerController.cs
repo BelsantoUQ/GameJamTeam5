@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float rotation;
     private bool isGrounded; // Variable para verificar si el jugador está en el suelo
     private RotatePlanet planetController;
+    private GalaxyRotation galaxyController;
     private bool activateTunnelEffect;
     private bool lateTunnelEffect;
     private int hitsRemaining;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         planetController = FindObjectOfType<RotatePlanet>();
+        galaxyController = FindObjectOfType<GalaxyRotation>();
         GameObject chasis = GameObject.FindGameObjectWithTag("Chasis");
         Renderer chasisRenderer = chasis.GetComponent<Renderer>();
         chasisMaterial = chasisRenderer.material;
@@ -50,6 +52,7 @@ public class PlayerController : MonoBehaviour
         if (isDestroyed)
         {
             planetController.SetSpeed(0f);
+            galaxyController.SetSpeed(0f);
         }
         else
         {
@@ -122,6 +125,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R) && !lateTunnelEffect)
             {
                 planetController.SetSpeed(-50f);
+                galaxyController.SetSpeed(10);
                 noHit = true;
             }
         }
@@ -129,6 +133,7 @@ public class PlayerController : MonoBehaviour
         {
             // Ajustar la velocidad a 15
             planetController.SetSpeed(-15f);
+            galaxyController.SetSpeed(5);
         }
     }
 
