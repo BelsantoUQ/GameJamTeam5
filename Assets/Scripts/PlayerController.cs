@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded; // Variable para verificar si el jugador está en el suelo
     private RotatePlanet planetController;
     private GalaxyRotation galaxyController;
+    private GameManager gameManager;
     private bool activateTunnelEffect;
     private bool lateTunnelEffect;
     private int hitsRemaining;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         planetController = FindObjectOfType<RotatePlanet>();
         galaxyController = FindObjectOfType<GalaxyRotation>();
+        gameManager = FindObjectOfType<GameManager>();
         GameObject chasis = GameObject.FindGameObjectWithTag("Chasis");
         Renderer chasisRenderer = chasis.GetComponent<Renderer>();
         chasisMaterial = chasisRenderer.material;
@@ -196,8 +198,15 @@ public class PlayerController : MonoBehaviour
         }
 
         isDestroyed = true;
+
+        if (isDestroyed) StartCoroutine(GameOver());
     }
 
+    private IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(1.5f);
+        gameManager.gameHasEnded = false;
+    }
     private IEnumerator ChangeOpacity(Material material, float targetOpacity, int numTimes)
     {
         for (int i = 0; i < numTimes; i++)
