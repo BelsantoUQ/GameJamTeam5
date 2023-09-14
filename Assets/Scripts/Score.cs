@@ -7,20 +7,24 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     //Variable para poder saber la colision con los puntos
-    public float score = 0;
+    [SerializeField] HudVariables points;
     public TextMeshProUGUI scoreText;
 
+    private void Awake()
+    {
+        points.score = 0;
+    }
 
     private void FixedUpdate()
     {
-        score += Time.deltaTime * 10;
-        scoreText.text = score.ToString("0");
+        points.score += Time.deltaTime * 10;
+        scoreText.text = points.score.ToString("0");
     }
 
 
     public void addPoints()
     {
-        score += 100;
+        points.score += 100;
     }
 
 

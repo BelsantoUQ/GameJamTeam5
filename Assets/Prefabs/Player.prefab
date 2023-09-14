@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ae2b91f8bee1ca8499ba5c673248f206, type: 2}
+  - {fileID: 2100000, guid: 9a072b2c0415af041bbdf872368dc596, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -181,7 +181,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2ef0eda9cb41884d9dffb1524f0c341, type: 2}
+  - {fileID: 2100000, guid: 9a072b2c0415af041bbdf872368dc596, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -246,7 +246,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 814009489464937758, guid: cc361803c96faec41999c350fee960a1, type: 3}
       propertyPath: m_Name
-      value: Mercedes Variant
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 814009489464937758, guid: cc361803c96faec41999c350fee960a1, type: 3}
       propertyPath: m_TagString
@@ -311,7 +311,7 @@ PrefabInstance:
     - target: {fileID: 8509942222168045562, guid: cc361803c96faec41999c350fee960a1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0a57ebe9dde58f548bb8350b26b3b3e3, type: 2}
+      objectReference: {fileID: 2100000, guid: 81c7ae2386b1abf40828c9c2bb29720d, type: 2}
     - target: {fileID: 8509942222168045562, guid: cc361803c96faec41999c350fee960a1, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
