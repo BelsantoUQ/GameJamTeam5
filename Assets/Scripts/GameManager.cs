@@ -9,15 +9,28 @@ public class GameManager : MonoBehaviour
     public bool gameHasEnded = true;
 
     [SerializeField] private GameObject gameOver;
-    [SerializeField] private GameObject Score;
+    [SerializeField] private Score scoreController;
 
+
+    void Start()
+    {
+        scoreController = FindObjectOfType<Score>();
+    }
 
     private void Update()
     {
         EndGame();
     }
 
+    public void addPoints()
+    {
+        scoreController.addPoints();
+    }
 
+    public void addShield()
+    {
+        scoreController.addShield();
+    }
     public void EndGame()
     {
         if (gameHasEnded == false)
@@ -31,10 +44,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         gameOver.SetActive(true);
-        
-        Score.SetActive(false);
-
+        scoreController.SetScoreActive(false);
     }
-
 
 }
