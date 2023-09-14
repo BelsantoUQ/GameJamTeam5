@@ -11,6 +11,7 @@ public class SettingMenu : MonoBehaviour
 
     private void Awake()
     {
+        audioMixer.SetFloat("volume", -40f);
         slider.value = GetMasterValue();
     }
 
