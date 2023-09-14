@@ -144,6 +144,8 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         ValidateGroundCollision(collision);
+        ValidateCoinCollision(collision);
+        ValidatePowerUpCollision(collision);
     }
 
     private void ValidateGroundCollision(Collision collision)
@@ -154,6 +156,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void ValidateCoinCollision(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            gameManager.addPoints();
+        }
+    }
+
+    private void ValidatePowerUpCollision(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Shield"))
+        {
+            gameManager.addShield();
+        }
+    }
+    
     public void SetTunnelEffect(bool activate)
     {
         this.activateTunnelEffect = activate;
