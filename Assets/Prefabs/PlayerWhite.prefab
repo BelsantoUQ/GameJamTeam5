@@ -11,10 +11,10 @@ PrefabInstance:
     - target: {fileID: 2469341997146420632, guid: d1b1f0ba7293f3c49b35c4126739338a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 81c7ae2386b1abf40828c9c2bb29720d, type: 2}
+      objectReference: {fileID: 2100000, guid: e7cfb2de09920694e9c3810a4c83a88e, type: 2}
     - target: {fileID: 6851751271933398908, guid: d1b1f0ba7293f3c49b35c4126739338a, type: 3}
       propertyPath: m_Name
-      value: Player Variant Variant
+      value: PlayerWhite
       objectReference: {fileID: 0}
     - target: {fileID: 7067342138791342301, guid: d1b1f0ba7293f3c49b35c4126739338a, type: 3}
       propertyPath: m_LocalPosition.x
