@@ -277,6 +277,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 9a072b2c0415af041bbdf872368dc596, type: 2}
     - target: {fileID: 2109942701430578728, guid: 9832bcd301a97a148b4185e46532916c, type: 3}
+      propertyPath: destroyClip
+      value: 
+      objectReference: {fileID: 8300000, guid: adbaafa124d405c47ae5ba367841c7db, type: 3}
+    - target: {fileID: 2109942701430578728, guid: 9832bcd301a97a148b4185e46532916c, type: 3}
       propertyPath: plasmaExplosion
       value: 
       objectReference: {fileID: 1001978162931498063}
@@ -384,6 +388,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 865e35c9ba1ad424fb8fa36178794f39, type: 2}
+    - target: {fileID: 4636132791102162705, guid: 9832bcd301a97a148b4185e46532916c, type: 3}
+      propertyPath: m_TagString
+      value: ChasisAudio
+      objectReference: {fileID: 0}
     - target: {fileID: 4797334525779178262, guid: 9832bcd301a97a148b4185e46532916c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -629,7 +637,7 @@ AudioSource:
   m_GameObject: {fileID: 6851751271933398908}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b593be37ff8cd234b819a85b050fe2df, type: 2}
   m_audioClip: {fileID: 8300000, guid: a2433afdf39a6f842a45e18593605af0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1

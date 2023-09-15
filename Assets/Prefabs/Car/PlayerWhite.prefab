@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e7cfb2de09920694e9c3810a4c83a88e, type: 2}
+    - target: {fileID: 6667417976437656067, guid: d1b1f0ba7293f3c49b35c4126739338a, type: 3}
+      propertyPath: destroyClip
+      value: 
+      objectReference: {fileID: 8300000, guid: adbaafa124d405c47ae5ba367841c7db, type: 3}
     - target: {fileID: 6851751271933398908, guid: d1b1f0ba7293f3c49b35c4126739338a, type: 3}
       propertyPath: m_Name
       value: PlayerWhite

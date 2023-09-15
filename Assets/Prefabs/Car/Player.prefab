@@ -503,6 +503,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   jumpForce: 0
+  plasmaExplosion: {fileID: 0}
+  shieldVisualEffect: {fileID: 0}
+  tunnelVisualEffect: {fileID: 0}
+  damageVisualEffect: {fileID: 0}
+  nitroVisualEffect: {fileID: 0}
+  destroyClip: {fileID: 8300000, guid: adbaafa124d405c47ae5ba367841c7db, type: 3}
 --- !u!1 &2314498922088083742 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3858483503369348951, guid: cc361803c96faec41999c350fee960a1, type: 3}
