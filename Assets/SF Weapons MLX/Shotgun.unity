@@ -431,6 +431,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 47.962
       objectReference: {fileID: 0}
+    - target: {fileID: 8700940011573345271, guid: d1b1f0ba7293f3c49b35c4126739338a, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700940011573345271, guid: d1b1f0ba7293f3c49b35c4126739338a, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
