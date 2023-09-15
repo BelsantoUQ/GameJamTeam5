@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private float rotationSpeed; // Define la velocidad de cambio de rotación
     private float minX = -5.0f; // Define límite del rango minimo de movimiento permitido
     private float maxX = 5.0f; // Define límite del rango maximo de movimiento permitido
+    private float timeToDeactive = 1;
     private Rigidbody rb;
     private float rotation;
     private bool isGrounded; // Variable para verificar si el jugador está en el suelo
@@ -176,12 +177,12 @@ public class PlayerController : MonoBehaviour
     private void TunnelEffectPower()
     {
         
-        if (this.activateTunnelEffect)
+        if (activateTunnelEffect)
         {
             if (Input.GetKeyDown(KeyCode.R) && !lateTunnelEffect)
             {
-                
                 plasmaExplosion.SetActive(false);
+                tunnelVisualEffect.SetActive(false);
                 plasmaExplosion.SetActive(true);
                 tunnelVisualEffect.SetActive(true);
                 planetController.SetSpeed(-50f);
@@ -193,9 +194,16 @@ public class PlayerController : MonoBehaviour
         else
         {
             // Ajustar la velocidad a 15
-            tunnelVisualEffect.SetActive(false);
             planetController.SetSpeed(-15f);
             galaxyController.SetSpeed(5);
+            timeToDeactive -= Time.deltaTime;
+            if (timeToDeactive <= 0)
+            {
+                
+                plasmaExplosion.SetActive(false);
+                tunnelVisualEffect.SetActive(false);
+                timeToDeactive = 1;
+            }
         }
     }
 

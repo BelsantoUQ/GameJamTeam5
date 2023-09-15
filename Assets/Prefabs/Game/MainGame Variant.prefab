@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: orthoMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5947286094423506164, guid: e9d4d39a81c53714595810d250e5119d, type: 3}
+      propertyPath: m_Name
+      value: Planet
+      objectReference: {fileID: 0}
     - target: {fileID: 6067859102522475814, guid: e9d4d39a81c53714595810d250e5119d, type: 3}
       propertyPath: m_Name
       value: MainGame Variant

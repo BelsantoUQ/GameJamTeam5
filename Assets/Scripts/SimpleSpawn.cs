@@ -29,13 +29,5 @@ public class SimpleSpawn : MonoBehaviour
         spawnedObject.transform.SetParent(father.transform);
     }
 
-    private void Update(GameObject spawnedObject)
-    {
-        float timetoDestro = timeforDestro - (1 * Time.deltaTime);
-        if (timetoDestro == 0)
-        {
-            Destroy(spawnedObject);
-        }
-    }
 }
 

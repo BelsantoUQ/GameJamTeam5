@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 171911681758383391}
   m_Layer: 0
   m_Name: Extern Hull
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5114,7 +5114,7 @@ GameObject:
   - component: {fileID: 7096554127545463965}
   m_Layer: 0
   m_Name: Intern Hull
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

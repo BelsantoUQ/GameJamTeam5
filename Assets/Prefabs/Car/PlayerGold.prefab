@@ -56,10 +56,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5944362461552027522, guid: e4b0e4d786b9f334ca61f843abe24070, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4463472587314802273, guid: e4b0e4d786b9f334ca61f843abe24070, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7159927423472998210}
   m_SourcePrefab: {fileID: 100100000, guid: e4b0e4d786b9f334ca61f843abe24070, type: 3}
 --- !u!4 &2039154356118724519 stripped
 Transform:
@@ -71,6 +75,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4463472587314802273, guid: e4b0e4d786b9f334ca61f843abe24070, type: 3}
   m_PrefabInstance: {fileID: 899884962433195814}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7159927423472998210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3570360753948750151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1ff3c5208c7ab48bf299a23fce737f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1427281066317609044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -815,6 +831,10 @@ PrefabInstance:
     - target: {fileID: 7811129446678396843, guid: 5f20d24a125ae6c428408a33b135009e, type: 3}
       propertyPath: m_Name
       value: PlasmaExplosionEffect Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811129446678396843, guid: 5f20d24a125ae6c428408a33b135009e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7812351880538418929, guid: 5f20d24a125ae6c428408a33b135009e, type: 3}
       propertyPath: m_LocalPosition.x
