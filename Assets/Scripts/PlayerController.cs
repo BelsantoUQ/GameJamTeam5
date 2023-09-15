@@ -40,15 +40,21 @@ public class PlayerController : MonoBehaviour
     // private Color chasisColor;
     private Material chasisMaterial;
     private bool isDestroyed;
-    
+    //Audio
+    private AudioSource carAudio;
+    private AudioSource chassisAudio;
+    [SerializeField]private AudioClip destroyClip;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        carAudio = GetComponent<AudioSource>();
         planetController = FindObjectOfType<RotatePlanet>();
         galaxyController = FindObjectOfType<GalaxyRotation>();
         gameManager = FindObjectOfType<GameManager>();
         GameObject chasis = GameObject.FindGameObjectWithTag("Chasis");
+        chassisAudio = GameObject.FindGameObjectWithTag("ChasisAudio").GetComponent<AudioSource>();
         Renderer chasisRenderer = chasis.GetComponent<Renderer>();
         chasisMaterial = chasisRenderer.material;
         //chasisColor = chasisMaterial.color;
@@ -287,7 +293,10 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator GameOver()
     {
+        carAudio.PlayOneShot(destroyClip);
+        chassisAudio.enabled = false;
         yield return new WaitForSeconds(1.5f);
+        carAudio.enabled = false;
         gameManager.gameHasEnded = false;
     }
     private IEnumerator ChangeOpacity(Material material, float targetOpacity, int numTimes)
