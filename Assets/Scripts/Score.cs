@@ -34,10 +34,26 @@ public class Score : MonoBehaviour
     {
         points.score += 100;
     }
+    
+    public void addBonusPoints()
+    {
+        points.score += 500;
+    }
 
     public void addShield()
     {
         if(points.shield <99)
             points.shield += 25;
+    }
+
+    public void removeShield()
+    {
+        if (points.shield > 99)
+            points.shield = 0;
+    }
+    
+    public bool isShieldReady()
+    {
+        return points.shield >99;
     }
 }
