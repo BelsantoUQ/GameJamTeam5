@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     public bool gameHasEnded = true;
 
     [SerializeField] private GameObject gameOver;
-    [SerializeField] private Score scoreController;
+    [SerializeField] private GameObject backScore;
+    [SerializeField] private GameObject HudScore;
+    private Score scoreController;
 
 
     void Start()
@@ -43,6 +45,8 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         Time.timeScale = 0f;
+        backScore.SetActive(false);
+        HudScore.SetActive(false);
         gameOver.SetActive(true);
         scoreController.SetScoreActive(false);
     }
