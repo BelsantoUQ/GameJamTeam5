@@ -9,14 +9,47 @@ public class GameManager : MonoBehaviour
     public bool gameHasEnded = true;
 
     [SerializeField] private GameObject gameOver;
-    [SerializeField] private GameObject Score;
+    [SerializeField] private GameObject backScore;
+    [SerializeField] private GameObject HudScore;
+    private Score scoreController;
 
+
+    void Start()
+    {
+        scoreController = FindObjectOfType<Score>();
+    }
 
     private void Update()
     {
         EndGame();
     }
 
+    public void addBonusPoints()
+    {
+        scoreController.addBonusPoints();
+    }
+    
+    public void addPoints()
+    {
+        scoreController.addPoints();
+    }
+
+    public void addShield()
+    {
+        scoreController.addShield();
+    }
+    
+    public void removeShield()
+    {
+        scoreController.removeShield();
+    }
+    
+    
+    
+    public bool isShieldReady()
+    {
+        return scoreController.isShieldReady();
+    }
 
     public void EndGame()
     {
@@ -30,11 +63,10 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         Time.timeScale = 0f;
+        backScore.SetActive(false);
+        HudScore.SetActive(false);
         gameOver.SetActive(true);
-        
-        Score.SetActive(false);
-
+        scoreController.SetScoreActive(false);
     }
-
 
 }
