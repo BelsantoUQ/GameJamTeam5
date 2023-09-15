@@ -9,7 +9,7 @@ public class TunnelEffect : MonoBehaviour
     // Este método se llama cuando un objeto entra en el colisionador
     void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("Player"))
+        if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Shield") && !other.gameObject.CompareTag("Coin"))
         {
             playerController = FindObjectOfType<PlayerController>();
             playerController.SetTunnelEffect(true);
@@ -19,7 +19,7 @@ public class TunnelEffect : MonoBehaviour
     // Este método se llama cuando un objeto sale del colisionador
     void OnTriggerExit(Collider other)
     {
-        if (!other.gameObject.CompareTag("Player"))
+        if (!other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Shield") && !other.gameObject.CompareTag("Coin"))
         {
             playerController.SetTunnelEffect(false);
             playerController.SetNoHit(false);
