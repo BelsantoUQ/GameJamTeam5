@@ -11,6 +11,9 @@ TagManager:
   - Ground
   - ChasisPlayer
   - Chasis
+  - Parry
+  - Shield
+  - Coin
   layers:
   - Default
   - TransparentFX
