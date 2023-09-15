@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2511945025182014790}
+  - component: {fileID: 3109536400274195920}
   m_Layer: 0
   m_Name: PilRight
   m_TagString: Untagged
@@ -37,6 +38,18 @@ Transform:
   - {fileID: 6540746756215324267}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -36.6, y: 0, z: 0}
+--- !u!114 &3109536400274195920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450952079468110975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c816338d2cb05f48a7b56204909ebc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3071754048376566695
 PrefabInstance:
   m_ObjectHideFlags: 0
