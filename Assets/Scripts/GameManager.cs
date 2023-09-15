@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
         EndGame();
     }
 
+    public void addBonusPoints()
+    {
+        scoreController.addBonusPoints();
+    }
+    
     public void addPoints()
     {
         scoreController.addPoints();
@@ -33,6 +38,19 @@ public class GameManager : MonoBehaviour
     {
         scoreController.addShield();
     }
+    
+    public void removeShield()
+    {
+        scoreController.removeShield();
+    }
+    
+    
+    
+    public bool isShieldReady()
+    {
+        return scoreController.isShieldReady();
+    }
+
     public void EndGame()
     {
         if (gameHasEnded == false)
