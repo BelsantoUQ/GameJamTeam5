@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject nitroVisualEffect;
 
+    private int coinsToShield;
     private bool shieldActive;
     private float shielTime;
     private float rotationSpeed; // Define la velocidad de cambio de rotación
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
         Renderer chasisRenderer = chasis.GetComponent<Renderer>();
         chasisMaterial = chasisRenderer.material;
         //chasisColor = chasisMaterial.color;
+        coinsToShield = 0;
         jumpForce = 10f;
         moveSpeed = 5f;
         hitsRemaining = 2;
@@ -91,8 +93,8 @@ public class PlayerController : MonoBehaviour
         if (!shieldActive)
         {
             // Comprobar si la tecla "E" ha sido presionada y si el escudo ya está cargado
-            //if (gameManager.isShieldReady() && Input.GetKeyDown(KeyCode.E))
-            if (Input.GetKeyDown(KeyCode.E))
+            //if (Input.GetKeyDown(KeyCode.E))
+            if (gameManager.isShieldReady() && Input.GetKeyDown(KeyCode.E))
             {
                 // Activar el efecto visual del escudo
                 shieldVisualEffect.SetActive(true);
@@ -128,7 +130,7 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         // Saltar cuando se presiona la tecla de espacio y el jugador está en el suelo
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded &&  transform.position.y < 48.9f)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false; // Marcamos que el jugador ya no está en el suelo
@@ -231,6 +233,12 @@ public class PlayerController : MonoBehaviour
     public void PickUpCoin()
     {
         gameManager.addPoints();
+        coinsToShield += 1;
+        if (coinsToShield >= 15 && !gameManager.isShieldReady())
+        {
+            PickUpPowerUpShield();
+            coinsToShield = 0;
+        }
     }
 
     public void PickUpPowerUpShield()

@@ -58,12 +58,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 865e35c9ba1ad424fb8fa36178794f39, type: 2}
     - target: {fileID: 4476461687025908966, guid: 3511f53500a20bd4285b202a87ba159a, type: 3}
       propertyPath: m_Name
-      value: Player Variant Variant
+      value: PlayerTransparent
       objectReference: {fileID: 0}
     - target: {fileID: 4849536925169960450, guid: 3511f53500a20bd4285b202a87ba159a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 46e5f6bfd5d20b64887a9086e9c2e7b6, type: 2}
+      objectReference: {fileID: 2100000, guid: 69ee7766602ddeb4f919428fe4fc8b26, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

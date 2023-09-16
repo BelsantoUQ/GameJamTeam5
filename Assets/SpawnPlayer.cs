@@ -16,6 +16,9 @@ public class SpawnPlayer : MonoBehaviour
     GameObject selectedCarPrefab = null;
     void Start()
     {
+        // Llamamos a la función SelectPlayer() para seleccionar un jugador al azar.
+        SelectPlayer(4); // Genera un número aleatorio entre 0 y 4 (incluyendo 0 pero excluyendo 5).
+
         if (selectedCarPrefab == null)
             selectedCarPrefab = playerPrefabs[0];
         
