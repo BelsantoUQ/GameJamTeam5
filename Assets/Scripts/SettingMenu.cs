@@ -8,10 +8,11 @@ public class SettingMenu : MonoBehaviour
 {
     [SerializeField]public Slider slider;
     [SerializeField]public AudioMixer audioMixer;
+    [SerializeField] private float volume = -30f;
 
     private void Awake()
     {
-        audioMixer.SetFloat("volume", -30f);
+        audioMixer.SetFloat("volume", volume);
         slider.value = GetMasterValue();
     }
 

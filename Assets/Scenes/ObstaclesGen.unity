@@ -601,17 +601,29 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3517632179933459084, guid: 98a673e221319394f9d7cc1c7475464c, type: 3}
+      propertyPath: volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951214818466417703, guid: 98a673e221319394f9d7cc1c7475464c, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951214818466417703, guid: 98a673e221319394f9d7cc1c7475464c, type: 3}
+      propertyPath: m_MinValue
+      value: -40
+      objectReference: {fileID: 0}
     - target: {fileID: 3985302277109134468, guid: 98a673e221319394f9d7cc1c7475464c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3985302277109134468, guid: 98a673e221319394f9d7cc1c7475464c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3985302277109134468, guid: 98a673e221319394f9d7cc1c7475464c, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4076196064617052598, guid: 98a673e221319394f9d7cc1c7475464c, type: 3}
       propertyPath: m_Color.a
@@ -657,13 +669,17 @@ PrefabInstance:
       propertyPath: Loop
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7340158488353113049, guid: 98a673e221319394f9d7cc1c7475464c, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 30803dcf91f39674384bc2ccd83aec91, type: 2}
     - target: {fileID: 7502653265410162953, guid: 98a673e221319394f9d7cc1c7475464c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7502653265410162953, guid: 98a673e221319394f9d7cc1c7475464c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7762812675748645334, guid: 98a673e221319394f9d7cc1c7475464c, type: 3}
       propertyPath: m_Name
@@ -1115,7 +1131,7 @@ AudioSource:
   m_GameObject: {fileID: 2119896401}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 30803dcf91f39674384bc2ccd83aec91, type: 2}
   m_audioClip: {fileID: 8300000, guid: 1c64bd3a6ecc5c4409e8aa874c7315bf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.161
