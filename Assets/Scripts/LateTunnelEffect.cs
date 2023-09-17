@@ -40,6 +40,7 @@ public class LateTunnelEffect : MonoBehaviour
 
         while (elapsedTime < shrinkDuration)
         {
+            if (other.gameObject == null) yield return null;
             // Reduce gradualmente el tama�o del objeto de comida
             other.transform.localScale = Vector3.Lerp(initialScale, Vector3.zero, elapsedTime / shrinkDuration);
 

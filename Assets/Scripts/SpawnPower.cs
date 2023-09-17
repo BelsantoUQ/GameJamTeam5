@@ -11,7 +11,7 @@ public class SpawnPower : MonoBehaviour
     void DeactiveGameObject()
     {
         // Desactiva el objeto después de 2 segundos.
-        Debug.Log("Desactivar efecto");
+//        Debug.Log("Desactivar efecto");
         gameObject.SetActive(false);
     }
 }
