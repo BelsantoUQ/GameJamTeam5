@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private AudioClip hitClip;
     [SerializeField]private AudioClip tunnelEffectClip;
     [SerializeField]private AudioClip jumpClip;
+    [SerializeField]private AudioClip shielClip;//sonido de escudo activo
+    [SerializeField]private AudioClip readyShieldClip;//sonido para indicar que ya se cargó el escudo
 
     // Start is called before the first frame update
     void Start()
@@ -92,13 +94,15 @@ public class PlayerController : MonoBehaviour
     private void Shield()
     {
         
-        // Verificar si el escudo está activo, entonces no
+        // Verificar si el escudo está no activo
         if (!shieldActive)
         {
             // Comprobar si la tecla "E" ha sido presionada y si el escudo ya está cargado
             //if (Input.GetKeyDown(KeyCode.E))
             if (gameManager.IsShieldReady() && Input.GetKeyDown(KeyCode.E))
             {
+                
+                StartCoroutine(ShieldEffect());
                 // Activar el efecto visual del escudo
                 shieldVisualEffect.SetActive(true);
         
@@ -343,6 +347,13 @@ public class PlayerController : MonoBehaviour
         carAudio.PlayOneShot(jumpClip);
         yield return new WaitForSeconds(1f);
     }
+    
+    private IEnumerator ShieldEffect()
+    {
+        carAudio.PlayOneShot(shielClip);
+        yield return new WaitForSeconds(5f);
+    }
+    
     private IEnumerator ChangeOpacity(Material material, float targetOpacity, int numTimes)
     {
         for (int i = 0; i < numTimes; i++)
