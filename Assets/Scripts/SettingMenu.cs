@@ -10,6 +10,7 @@ public class SettingMenu : MonoBehaviour
     [SerializeField]public AudioMixer audioMixer;
     [SerializeField] private float volume = -30f;
 
+
     private void Awake()
     {
         audioMixer.SetFloat("volume", volume);
