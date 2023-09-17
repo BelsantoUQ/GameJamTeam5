@@ -12,9 +12,13 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 21cd8fee45164c246aaf24c0529077bc, type: 2}
+    - target: {fileID: 1441876848897112897, guid: 60199f5098d1b9f499505203c96b5783, type: 3}
+      propertyPath: jumpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 57d96e0355d21364780d4009e3b7057b, type: 3}
     - target: {fileID: 1698896591763160638, guid: 60199f5098d1b9f499505203c96b5783, type: 3}
       propertyPath: m_Name
-      value: Player Variant Variant
+      value: PlayerBlack
       objectReference: {fileID: 0}
     - target: {fileID: 3067444147063308703, guid: 60199f5098d1b9f499505203c96b5783, type: 3}
       propertyPath: m_LocalPosition.x

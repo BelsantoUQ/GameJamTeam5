@@ -289,6 +289,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 57d96e0355d21364780d4009e3b7057b, type: 3}
     - target: {fileID: 2109942701430578728, guid: 9832bcd301a97a148b4185e46532916c, type: 3}
+      propertyPath: shielClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e156a20f3c520e747b5bd9e7e4c8aeef, type: 3}
+    - target: {fileID: 2109942701430578728, guid: 9832bcd301a97a148b4185e46532916c, type: 3}
       propertyPath: destroyClip
       value: 
       objectReference: {fileID: 8300000, guid: adbaafa124d405c47ae5ba367841c7db, type: 3}
@@ -296,6 +300,10 @@ PrefabInstance:
       propertyPath: plasmaExplosion
       value: 
       objectReference: {fileID: 1001978162931498063}
+    - target: {fileID: 2109942701430578728, guid: 9832bcd301a97a148b4185e46532916c, type: 3}
+      propertyPath: readyShieldClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c770812785bc1449a6c75d444354fd2, type: 3}
     - target: {fileID: 2109942701430578728, guid: 9832bcd301a97a148b4185e46532916c, type: 3}
       propertyPath: tunnelEffectClip
       value: 
