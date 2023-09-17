@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 900020191997264863, guid: dece43cb98994a94db8bb1d886449f98, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2035443514042564214, guid: dece43cb98994a94db8bb1d886449f98, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -19,6 +23,14 @@ PrefabInstance:
     - target: {fileID: 3974083168309787006, guid: dece43cb98994a94db8bb1d886449f98, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 23.528076
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103074786915216466, guid: dece43cb98994a94db8bb1d886449f98, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103074786915216466, guid: dece43cb98994a94db8bb1d886449f98, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4275261147028268173, guid: dece43cb98994a94db8bb1d886449f98, type: 3}
       propertyPath: m_Name
@@ -102,6 +114,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4368952040179380090, guid: dece43cb98994a94db8bb1d886449f98, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467365024959748575, guid: dece43cb98994a94db8bb1d886449f98, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467365024959748575, guid: dece43cb98994a94db8bb1d886449f98, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467365024959748575, guid: dece43cb98994a94db8bb1d886449f98, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9130349832785788565, guid: dece43cb98994a94db8bb1d886449f98, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

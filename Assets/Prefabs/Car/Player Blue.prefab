@@ -47,7 +47,7 @@ PrefabInstance:
     - target: {fileID: 4320068785706139571, guid: ce4ee3156bee8d644afcbd7f9c22370f, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 24300002, guid: b593be37ff8cd234b819a85b050fe2df, type: 2}
+      objectReference: {fileID: 24300002, guid: 30803dcf91f39674384bc2ccd83aec91, type: 2}
     - target: {fileID: 5313525596701522995, guid: ce4ee3156bee8d644afcbd7f9c22370f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.20000012
@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5868592957670809770, guid: ce4ee3156bee8d644afcbd7f9c22370f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 30803dcf91f39674384bc2ccd83aec91, type: 2}
     - target: {fileID: 6132174775800702434, guid: ce4ee3156bee8d644afcbd7f9c22370f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
