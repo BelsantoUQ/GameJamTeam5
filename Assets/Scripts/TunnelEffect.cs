@@ -23,6 +23,7 @@ public class TunnelEffect : MonoBehaviour
         }
     }
 
+    
     // Este método se llama cuando un objeto sale del colisionador
     void OnTriggerExit(Collider other)
     {

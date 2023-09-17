@@ -3,7 +3,8 @@ guid: 66d7f71b946b50a42814338b65b09443
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - tunnelEffectClip: {fileID: 8300000, guid: 3c770812785bc1449a6c75d444354fd2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
