@@ -3,7 +3,14 @@ guid: 4de91f07e39a8464f9a460f232341447
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - plasmaExplosion: {instanceID: 0}
+  - shieldVisualEffect: {instanceID: 0}
+  - tunnelVisualEffect: {instanceID: 0}
+  - damageVisualEffect: {instanceID: 0}
+  - nitroVisualEffect: {instanceID: 0}
+  - destroyClip: {instanceID: 0}
+  - hitClip: {fileID: 8300000, guid: 2577710ba2fedff49afe28b2b3710e9b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

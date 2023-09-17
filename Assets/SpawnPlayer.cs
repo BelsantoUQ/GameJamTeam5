@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SpawnPlayer : MonoBehaviour
 {
-    public enum ColorOptions { White, Blue, Dark, Gold, Translucent }
+    [SerializeField]
+    private enum ColorOptions { White, Blue, Dark, Gold, Translucent }
 
     [SerializeField]
     private ColorOptions selectedColor = ColorOptions.White; // Valor azul predeterminado

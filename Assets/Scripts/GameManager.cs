@@ -12,11 +12,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject backScore;
     [SerializeField] private GameObject HudScore;
     private Score scoreController;
+    private ShieldBar shieldController;
 
 
     void Start()
     {
         scoreController = FindObjectOfType<Score>();
+        shieldController = FindObjectOfType<ShieldBar>();
+        shieldController.RemoveShield();
     }
 
     private void Update()
@@ -24,40 +27,38 @@ public class GameManager : MonoBehaviour
         EndGame();
     }
 
-    public void addBonusPoints()
+    public void AddBonusPoints()
     {
-        scoreController.addBonusPoints();
+        scoreController.AddBonusPoints();
     }
     
-    public void addPoints()
+    public void AddPoints()
     {
-        scoreController.addPoints();
+        scoreController.AddPoints();
     }
 
-    public void addShield()
+    public void AddShield()
     {
-        scoreController.addShield();
+        shieldController.AddShield();
     }
     
-    public void removeShield()
+    public void RemoveShield()
     {
-        scoreController.removeShield();
+        shieldController.RemoveShield();
     }
     
     
     
-    public bool isShieldReady()
+    public bool IsShieldReady()
     {
-        return scoreController.isShieldReady();
+        return shieldController.IsShieldReady();
     }
 
     public void EndGame()
     {
-        if (gameHasEnded == false)
-        {
-            gameHasEnded = true;
-            GameOver();
-        }
+        if (gameHasEnded != false) return;
+        gameHasEnded = true;
+        GameOver();
     }
 
     private void GameOver()

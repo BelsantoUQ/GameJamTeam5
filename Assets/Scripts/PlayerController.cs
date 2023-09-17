@@ -45,6 +45,9 @@ public class PlayerController : MonoBehaviour
     private AudioSource carAudio;
     private AudioSource chassisAudio;
     [SerializeField]private AudioClip destroyClip;
+    [SerializeField]private AudioClip hitClip;
+    [SerializeField]private AudioClip tunnelEffectClip;
+    [SerializeField]private AudioClip jumpClip;
 
     // Start is called before the first frame update
     void Start()
@@ -94,7 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             // Comprobar si la tecla "E" ha sido presionada y si el escudo ya está cargado
             //if (Input.GetKeyDown(KeyCode.E))
-            if (gameManager.isShieldReady() && Input.GetKeyDown(KeyCode.E))
+            if (gameManager.IsShieldReady() && Input.GetKeyDown(KeyCode.E))
             {
                 // Activar el efecto visual del escudo
                 shieldVisualEffect.SetActive(true);
@@ -122,7 +125,7 @@ public class PlayerController : MonoBehaviour
         shieldVisualEffect.SetActive(false);
         
         // Llamar a la función "removeShield" del objeto "gameManager" para eliminar el escudo
-        gameManager.removeShield();
+        gameManager.RemoveShield();
     }
 
 
@@ -132,6 +135,8 @@ public class PlayerController : MonoBehaviour
         // Saltar cuando se presiona la tecla de espacio y el jugador está en el suelo
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded &&  transform.position.y < 48.9f)
         {
+            
+            StartCoroutine(JumpEffect());
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false; // Marcamos que el jugador ya no está en el suelo
         }
@@ -189,6 +194,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R) && !lateTunnelEffect)
             {
+                StartCoroutine(GetTunnelEffectSound());
                 plasmaExplosion.SetActive(false);
                 tunnelVisualEffect.SetActive(false);
                 plasmaExplosion.SetActive(true);
@@ -196,7 +202,7 @@ public class PlayerController : MonoBehaviour
                 planetController.SetSpeed(-50f);
                 galaxyController.SetSpeed(10);
                 noHit = true;
-                gameManager.addBonusPoints();
+                gameManager.AddBonusPoints();
             }
         }
         else
@@ -232,9 +238,9 @@ public class PlayerController : MonoBehaviour
 
     public void PickUpCoin()
     {
-        gameManager.addPoints();
+        gameManager.AddPoints();
         coinsToShield += 1;
-        if (coinsToShield >= 15 && !gameManager.isShieldReady())
+        if (coinsToShield >= 15 && !gameManager.IsShieldReady())
         {
             PickUpPowerUpShield();
             coinsToShield = 0;
@@ -243,7 +249,7 @@ public class PlayerController : MonoBehaviour
 
     public void PickUpPowerUpShield()
     {
-        gameManager.addShield();
+        gameManager.AddShield();
         
     }
     
@@ -256,6 +262,11 @@ public class PlayerController : MonoBehaviour
     {
         this.noHit = activate;
         
+    }
+
+    public AudioSource GetcarAudio()
+    {
+        return carAudio;
     }
     
     public void SetLateTunnelEffect(bool activate)
@@ -275,14 +286,19 @@ public class PlayerController : MonoBehaviour
         // Verifica si hitsRemaining es mayor o igual a 1
         if (hitsRemaining < 2 && !noHit)
         {
+            if (hitsRemaining>0)
+            {
+                StartCoroutine(FirstHit());
+            }
             damageVisualEffect.SetActive(true);
-            
             // Baja y sube sutilmente la opacidad
             StartCoroutine(ChangeOpacity(chasisMaterial, 0.5f, 3));
 
             // Cambia el tono del albedo material del objeto a rojo y vuelve al color original
             StartCoroutine(ChangeAlbedoColor(chasisMaterial, Color.red, 3));
         }
+
+        
 
         if (hitsRemaining >= 1) return;
         // Si hitsRemaining es 0, desarma el carro
@@ -307,6 +323,26 @@ public class PlayerController : MonoBehaviour
         carAudio.enabled = false;
         gameManager.gameHasEnded = false;
     }
+
+    private IEnumerator FirstHit()
+    {
+        carAudio.PlayOneShot(hitClip);
+        yield return new WaitForSeconds(.5f);
+        carAudio.PlayOneShot(hitClip);
+    }
+    
+    private IEnumerator GetTunnelEffectSound()
+    {
+        carAudio.PlayOneShot(tunnelEffectClip);
+        yield return new WaitForSeconds(1f);
+        
+    }
+    
+    private IEnumerator JumpEffect()
+    {
+        carAudio.PlayOneShot(jumpClip);
+        yield return new WaitForSeconds(1f);
+    }
     private IEnumerator ChangeOpacity(Material material, float targetOpacity, int numTimes)
     {
         for (int i = 0; i < numTimes; i++)
@@ -329,7 +365,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator ChangeAlbedoColor(Material material, Color targetColor, int numTimes)
     {
-        Debug.Log("Color: :"+ material.color);
+//        Debug.Log("Color: :"+ material.color);
         Color originalColor = material.color;
         for (int i = 0; i < numTimes; i++)
         {

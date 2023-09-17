@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d7f71b946b50a42814338b65b09443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tunnelEffectClip: {fileID: 8300000, guid: 3c770812785bc1449a6c75d444354fd2, type: 3}
 --- !u!1 &8845450076482465519
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f6314ddd997564cb70a1c9213d4ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinClip: {fileID: 8300000, guid: a4a9327e98855524c846cc8e2f559e96, type: 3}
 --- !u!1001 &1554540994569786953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -509,6 +511,7 @@ MonoBehaviour:
   damageVisualEffect: {fileID: 0}
   nitroVisualEffect: {fileID: 0}
   destroyClip: {fileID: 8300000, guid: adbaafa124d405c47ae5ba367841c7db, type: 3}
+  hitClip: {fileID: 8300000, guid: 2577710ba2fedff49afe28b2b3710e9b, type: 3}
 --- !u!1 &2314498922088083742 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3858483503369348951, guid: cc361803c96faec41999c350fee960a1, type: 3}
