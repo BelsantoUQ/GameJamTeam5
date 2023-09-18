@@ -1234,6 +1234,10 @@ PrefabInstance:
       propertyPath: playerPrefabs.Array.data[3]
       value: 
       objectReference: {fileID: 839613671170081258, guid: 874c5095b2ecbd94dac01a2a41c6a33f, type: 3}
+    - target: {fileID: 3363594789725511579, guid: f757ecc21eab4d046ab72e329b2e790e, type: 3}
+      propertyPath: playerPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 1683374301531427407, guid: 12ba47dac77e1394cad87363040f91b6, type: 3}
     - target: {fileID: 5203267984952278602, guid: f757ecc21eab4d046ab72e329b2e790e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.00000011920929
